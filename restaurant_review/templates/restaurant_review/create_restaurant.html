@@ -1,0 +1,33 @@
+{% extends "restaurant_review/base.html" %}
+{% block title %}Νέα Αναφορά{% endblock %}
+{% block head %}
+    {{ block.super }}
+    <style>
+      body {
+          min-height: 75rem;
+          padding-top: 4.5rem;
+      }
+  </style>
+{% endblock %}
+{% block content %}
+{% comment %} <img src="{% static 'images/hygeia.svg' %}" class="d-flex justify-content-center"> {% endcomment %}
+<h2 class="d-flex justify-content-center">Αναφορά Έλλειψης</h2>
+
+    <form method="POST" action="{% url 'add_restaurant' %}">
+        <div class="mb-3">
+          <label for="restaurant_name" class="form-label">Όνομα Φαρμάκου</label>
+          <input type="text" class="form-control" id="restaurant_name" name="restaurant_name">
+        </div>
+        <div class="mb-3">
+          <label for="street_address" class="form-label">Τύπος Φαρμάκου (mg/ml)</label>
+          <input type="text" class="form-control" id="street_address" name="street_address">
+        </div>
+        <div class="mb-3">
+            <label for="description" class="form-label">Πόλη</label>
+            <input type="text" class="form-control" id="description" name="description">
+        </div>
+        <button type="submit" class="btn btn-primary">Καταχώριση</button>
+        <!-- <button type="cancel" class="btn btn-primary">Ακύρωση</button> -->
+      </form>
+{% endblock %}
+         

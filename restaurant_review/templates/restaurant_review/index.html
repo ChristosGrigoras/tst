@@ -1,0 +1,62 @@
+{% extends "restaurant_review/base.html" %}
+{% comment %} {% load restaurant_extras %} {% endcomment %}
+{% block title %}Ελλείψεις Φαρμάκων{% endblock %}
+{% block head %}
+    {{ block.super }}
+    <style>
+      body {
+          min-height: 75rem;
+          padding-top: 4.5rem;
+      }
+
+      .score {
+        display: block;
+        font-size: 16px;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .score-wrap {
+        display: inline-block;
+        position: relative;
+        height: 19px;
+      }
+      
+      .score .stars-active {
+        color: #EEBD01;
+        position: relative;
+        z-index: 10;
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      
+      .score .stars-inactive {
+        color: grey;
+        position: absolute;
+        top: 0;
+        left: 0;
+        -webkit-text-stroke: initial;
+        /* overflow: hidden; */
+      }
+  </style>
+{% endblock %}
+{% block content %}
+{% comment %} <img src="{% static 'images/hygeia.svg' %}" class="d-flex justify-content-center"> {% endcomment %}
+<h2 class="d-flex justify-content-center">Αναφορά Έλλειψης</h2>
+  
+  <div class="d-flex justify-content-end">
+          <a href="{% url 'create_restaurant' %}" class="btn btn-success px-4 gap-3">Νεα Αναφορά</a>
+  </div>
+  <div style="margin-top:5%;">
+    <p >
+      Η έλλειψη φαρμάκων είναι ένα σοβαρό πρόβλημα που απειλεί την υγεία και τη ζωή των ανθρώπων. 
+      Η έλλειψη φαρμάκων μπορεί να προκαλέσει καθυστέρηση στην παροχή υπηρεσιών υγείας και να εμποδίσει την επίτευξη αποτελεσματικής θεραπείας. Επίσης, μπορεί να οδηγήσει σε δυσλειτουργία των συστημάτων υγείας και αυξημένο κόστος για τους πολίτες. Είναι σημαντικό να λαμβάνουμε μέτρα για την αντιμετώπιση της έλλειψης φαρμάκων και να ενισχύουμε την ασφάλεια της παραγωγής και της διανομής των φαρμάκων.
+      Η αναφορά ελλείψεων φαρμάκων είναι πολύ σημαντική για την υγεία των πολιτών.</p>
+      <p>Κάνοντας μια <b>ανώνυμη</b> αναφορά έλλειψης ενός φαρμάκου, μπορείς να βοηθήσεις τους επαγγελματίες υγείας να καταλάβουν καλύτερα τα προβλήματα στη διαθεσιμότητα και τη διανομή φαρμάκων.
+      Με τη βοήθειά σου, θα μπορέσουν να δημιουργήσουν λύσεις και να κατορθώσουν να υπάρχει επάρκεια σε ελλειμματικά σκευάσματα. 
+      Εν κατακλείδι, η αναφορά ελλείψεων φαρμάκων είναι απαραίτητη για την διασφάλιση της υγείας των πολιτών μέσω της βελτίωσης της διαθεσιμότητας φαρμάκων.
+    </p>
+  </div>
+  
+{% endblock %}

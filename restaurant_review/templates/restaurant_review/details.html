@@ -1,0 +1,40 @@
+{% extends "restaurant_review/base.html" %}
+{% comment %} {% load restaurant_extras %} {% endcomment %}
+{% block title %}Πληροφορίες Ελλείψεων{% endblock %}
+{% block head %}
+  {{ block.super }}
+  <style>
+    body {
+        min-height: 75rem;
+        padding-top: 4.5rem;
+    }
+  </style>
+{% endblock %}
+{% block content %}
+    <!-- <h1>{{ restaurant.name }}</h1> -->
+    
+    <div class="row">
+      <div class="col-md-2 fw-bold">Όνομα:</div>
+      <div class="col">{{ restaurant.name }}</div>
+  </div>
+    <div class="row">
+        <div class="col-md-2 fw-bold">Τύπος (mg/ml):</div>
+        <div class="col">{{ restaurant.street_address }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 fw-bold">Πόλη:</div>
+        <div class="col">{{ restaurant.description }}</div>                
+    </div>
+    <!-- <div class="row">
+        <div class="col-md-2 fw-bold">Rating:</div>
+        <div class="col"></div>                
+    </div> -->
+
+    <p style="margin-top: 5%;">
+      Η ανώνυμη αναφορά σας για την παραπάνω έλλειψη καταχωρήθηκε.
+      </p>
+      <p style="margin-top: 5%;">
+      Η αναφορά σας θα κατατεθεί σε επαγγελματίες υγείας και σε ελεγκτικούς φαρμακευτικούς οργανισμούς.
+
+    </p>
+{% endblock %}
